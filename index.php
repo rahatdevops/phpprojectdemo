@@ -4,6 +4,6 @@
         <title>PHP Test</title>
     </head>
     <body>
-        <?php echo '<p>Hello Devops</p>'; ?>
+        <?php echo '<p>Hello Devops world</p>'; ?>
     </body>
 </html>
