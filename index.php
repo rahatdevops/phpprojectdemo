@@ -1,27 +1,28 @@
-<?php include("includes/a_config.php");?>
-<!DOCTYPE html>
-<html>
-<head>
-	<?php include("includes/head-tag-contents.php");?>
-</head>
-<body>
+<?php 
+include("inc/data.php");
+include("inc/functions.php");
 
-<?php include("includes/design-top.php");?>
-<?php include("includes/navigation.php");?>
+$pageTitle = "Personal Media Library";
+$section = null;
 
-<div class="container" id="main-content">
-	<h2>Welcome to devops website!</h2>
-	<p>Some content goes here! Let's go with the classic "lorem ipsum."</p>
+include("inc/header.php"); ?>
+		<div class="section catalog random">
 
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	</p>
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	</p>
-</div>
+			<div class="wrapper">
 
-<?php include("includes/footer.php");?>
+				<h2>May we suggest something?</h2>
 
-</body>
-</html>
+        <ul class="items">
+          <?php
+            $random = array_rand($catalog,4);
+            foreach($random as $id) {
+              echo get_item_html($id,$catalog[$id]);
+            }
+          ?>
+				</ul>
+
+			</div>
+
+		</div>
+
+<?php include("inc/footer.php"); ?>
