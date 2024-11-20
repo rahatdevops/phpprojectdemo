@@ -12,7 +12,7 @@ stages {
             steps {
                 script {
                     // Replace <path_to_delete> with the directory or file you want to delete
-                    sh 'sudo rm -rf /var/lib/docker/volumes/jenkins_data/_data'
+                    sh 'sudo rm -rf /var/lib/docker/volumes/jenkins_data/_data/workspace/phpproject/'
                 }
             }
         }
