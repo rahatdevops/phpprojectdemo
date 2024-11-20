@@ -14,7 +14,7 @@ pipeline {
      stage('Clean Workspace') {
             steps {
                 // Remove code from the Jenkins workspace
-                cleanWs()
+               cleanWs externalDelete: 'sudo rm -rf *', patterns: [[pattern: '**/*', type: 'INCLUDE']]
             }
         }
     post {
