@@ -1,39 +1,6 @@
 pipeline {
     agent any
 
-stages {
-        stage('Checkout Code') {
-            steps {
-                // Checkout code from the repository
-                checkout scm
-            }
-        }
-        stage('Delete Repo Path') {
-            steps {
-                script {
-                    // Replace <path_to_delete> with the directory or file you want to delete
-                    sh 'sudo rm -rf /var/lib/docker/volumes/jenkins_data/_data/workspace/phpproject/'
-                }
-            }
-        }
-
-stage('Push New Code') {
-            steps {
-                script {
-                    // Copy or prepare the new code (adjust as needed)
-                    sh '''
-                    cp -r /var/lib/docker/volumes/jenkins_data/_data/workspace/ .
-                    git config user.name "rahatdevops"
-                    git config user.email "saeed_456@outlook.com"
-                    git add .
-                    git commit -m "Updated code via Jenkins pipeline"
-                    git push origin main
-                    '''
-                }
-            }
-        }
-
-
     stages {
         stage('Deploy to phpprod-server') {
             steps {
