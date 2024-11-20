@@ -9,4 +9,19 @@ pipeline {
             }
         }
     }
+
+
+     stage('Clean Workspace') {
+            steps {
+                // Remove code from the Jenkins workspace
+                cleanWs()
+            }
+        }
+    post {
+        always {
+            // Optional: clean up after pipeline execution
+            echo 'Pipeline execution completed.'
+        }
+    }
+    
 }
