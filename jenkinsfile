@@ -1,15 +1,7 @@
 pipeline {
     agent any
 
-    stages {
-        stage('Cleanup workspace') {
-            steps {
-                script {
-                   echo 'Cleaning up existing repo dir...'
-                   sh "rm -rf repo"
-               }
-           }
-}
+    
 
     stages {
         stage('Deploy to phpprod-server') {
